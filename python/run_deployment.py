@@ -4,11 +4,18 @@ in a deployment package.
 """
 
 import os
-import deployment_package.deployment
+import sys
 
 
 # Deployment_directory points to base folder of the deployment, which should therefore be called 'deployment_package'.
 deployment_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'deployment_package')
+
+# Update $PATH with the deployment base directory and libraries before importing the deployment package.
+sys.path = [deployment_directory, os.path.join(deployment_directory, 'libraries')] + sys.path
+
+
+# Import the deployment package
+import deployment_package.deployment
 
 
 def main():
