@@ -6,7 +6,7 @@ This repository contains deployment structure templates for deployments in [UbiO
 
 | Language / version | Template directory |
 | ------------------ | ------------------ |
-| Python 3.5 - 3.8   | `python`           |
+| Python 3.7 - 3.11  | `python`           |
 | R 4.0              | `r`                |
 
 ### Documentation and examples
@@ -29,7 +29,7 @@ Instructions on how to deploy this example deployment can be found at
 
 ### Directory contents
 
-UbiOps currently supports Python (versions 3.5 / 3.6 / 3.7 / 3.8) and R (version 4.0).
+UbiOps currently supports Python (versions 3.7 - 3.11) and R (version 4.0).
 
 The language directory (`python` or `r`) contains a `deployment_package` directory, and an example script for
 calling the deployment (`run_deployment.py` or `run_deployment.R`). A deployable file in UbiOps should be a zipped
@@ -50,7 +50,7 @@ UbiOps supports two types of input and output:
 
 - **Structured**. Structured data consists of a dictionary (a named list in R) with one or more fields (key value pairs)
   with an associated data type (integer, string, double, boolean, array of integers, array of doubles, array of strings
-  or file (`blob`)).
+  or file).
 - **Plain**. Any string without structure.
 
 Combinations between input and output types are supported, e.g. a deployment with structured input and plain output, or
