@@ -31,14 +31,14 @@ class Deployment:
 
         print("Initialising My Deployment")
 
-    def request(self, data, request_context):
+    def request(self, data, context):
         """
         Method for deployment requests, called separately for each individual request.
 
         :param dict/str data: request input data. In case of deployments with structured data, a Python dictionary
             with as keys the input fields as defined upon deployment creation via the platform. In case of a deployment
             with plain input, it is a string.
-        :param dict request_context: a dictionary containing details of the request that might be useful in your code.
+        :param dict context: a dictionary containing details of the request that might be useful in your code.
             It contains the following keys:
                 - id (str): the id of the request
                 - pipeline_id (str): the pipeline_id if the request is part of a pipeline request
@@ -51,7 +51,7 @@ class Deployment:
             with plain output, it is a string. In this example, a dictionary with the key: output.
         """
 
-        print(f"Processing request {request_context['id']} for My Deployment")
+        print(f"Processing request {context['id']} for My Deployment")
 
         # You can run any code to handle the request here.
 
@@ -62,14 +62,14 @@ class Deployment:
         }
 
     # (OPTIONAL) Uncomment these lines in case you want to use 'requests' functionality
-    # def requests(self, data, request_context):
+    # def requests(self, data, context):
     #     """
     #     Method for deployment requests, called once with a list of requests.
     #
     #     :param list[dict/str] data: request input data. In case of deployments with structured data, a list of Python
     #         dictionaries with as keys the input fields as defined upon deployment creation via the platform. In case
     #         of a deployment with plain input, it is a list of strings.
-    #     :param dict request_context: a dictionary containing details of the request that might be useful in your code.
+    #     :param dict context: a dictionary containing details of the request that might be useful in your code.
     #         It contains the following keys:
     #             - id (str): the id of the request
     #             - pipeline_id (str): the pipeline_id if the request is part of a pipeline request
@@ -83,7 +83,7 @@ class Deployment:
     #         In this example, a list of dictionaries with the key: output.
     #     """
     #
-    #     print(f"Processing requests {request_context['id']} for My Deployment")
+    #     print(f"Processing requests {context['id']} for My Deployment")
     #
     #     # You can run any code to handle the requests here.
     #
