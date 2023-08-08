@@ -25,7 +25,7 @@ def main():
     # Here, we leave the context argument as an empty dictionary since it is normally filled in by the platform
     # when loading the deployment.
     deployment = deployment_package.deployment.Deployment(
-        base_directory=deployment_directory, context=dict()
+        base_directory=deployment_directory, context={}
     )
 
     # Mock input data. When a request is made, this dictionary is initialized.
@@ -38,7 +38,7 @@ def main():
     }
 
     # Make the prediction. The platform calls this method in exactly the same way
-    request_result = deployment.request(input_data)
+    request_result = deployment.request(data=input_data, context={"id": "<request-id>"})
 
     print("Deployment request result: %s" % request_result)
 
