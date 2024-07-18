@@ -2,4 +2,4 @@
 # will be installed with your deployment automatically.
 #
 # Example:
-# requests==2.24.0
+# requests==2.32.3
